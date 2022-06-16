@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap" rel="stylesheet">
+    <title>CSS FLEXBOX</title>
+
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            font-size: 15px;
+        }
+        
+        :root {
+            --lightgray: hsl(0, 0%, 95%);
+            --brightorange: hsl(31, 77%, 52%);
+            --darkcyan: hsl(184, 100%, 22%);
+            --vdarkcyan: hsl(179, 100%, 13%);
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .attribution {
+            font-size: 11px;
+            text-align: center;
+        }
+        
+        .attribution a {
+            color: hsl(228, 45%, 44%);
+        }
+        
+        .container {
+            width: 100%;
+            height: 50vh;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            background: var(--lightgray);
+            flex-flow: row wrap;
+        }
+        
+        .container div {
+            width: 25%;
+            line-height: 20px;
+            padding: 30px;
+            color: hsla(0, 0%, 100%, 0.75);
+        }
+        
+        .container div h3 {
+            color: var(--lightgray);
+            font-size: 30px;
+            font-family: 'Big Shoulders Display', cursive;
+        }
+        
+        .container div p {
+            font-family: 'Lexend Deca', sans-serif;
+            margin-bottom: 45px;
+        }
+        
+        .container div:first-child {
+            background: var(--brightorange);
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+        
+        .container div:last-child {
+            background: var(--vdarkcyan);
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+        
+        .container div:nth-child(2) {
+            background: var(--darkcyan);
+        }
+        
+        .container button {
+            background: var(--lightgray);
+            border: none;
+            border-radius: 18px;
+            padding: 10px 20px;
+            margin-bottom: 20px;
+        }
+        
+        .container button:hover {
+            color: var(--lightgray)!important;
+            border: 1px solid var(--lightgray);
+        }
+        
+        .container div:first-child button {
+            color: var(--brightorange);
+        }
+        
+        .container div:first-child button:hover {
+            background: var(--brightorange);
+        }
+        
+        .container div:last-child button {
+            color: var(--vdarkcyan);
+        }
+        
+        .container div:last-child button:hover {
+            background: var(--vdarkcyan);
+        }
+        
+        .container div:nth-child(2) button {
+            color: var(--darkcyan);
+        }
+        
+        .container div:nth-child(2) button:hover {
+            background: var(--darkcyan);
+        }
+        
+        img {
+            width: 30%;
+            height: 10%;
+            display: block;
+        }
+        
+        @media only screen and (max-width:599px) {
+            .container {
+                flex-flow: column wrap;
+                height: auto;
+                padding: 80px 15px;
+            }
+            .container div {
+                width: 100%;
+            }
+            .container div:first-child {
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 0px;
+                border-top-right-radius: 10px;
+            }
+            .container div:last-child {
+                border-bottom-left-radius: 10px;
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="container">
+        <div>
+            <img src="images/icon-sedans.svg">
+            <h3>Sedans</h3>
+            <p>
+                Choose a sedan for its affordability and excellent fuel economy. Ideal for cruising in the city or on your next road trip.
+            </p>
+            <button>Learn More</button>
+        </div>
+        <div>
+            <img src="images/icon-suvs.svg">
+            <h3>SUVs</h3>
+            <p>
+                Take an SUV for its spacious interior, power, and versatility. Perfect for your next family vacation and off-road adventures.
+            </p>
+            <button>Learn More</button>
+        </div>
+        <div>
+            <img src="images/icon-luxury.svg">
+            <h3>Luxury</h3>
+            <p>
+                Cruise in the best car brands without the bloated prices. Enjoy the enhanced comfort of a luxury rental and arrive in style.
+            </p>
+            <button>Learn More</button>
+        </div>
+    </section>
+
+</body>
+
+</html>
